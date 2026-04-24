@@ -5,18 +5,29 @@ function App() {
     <div className="container">
 
       {/* HEADER */}
-      <header className="header">
-        <div className="logo">
-          <span>Prefeitura de Tupã</span>
-          <span className="divider">|</span>
+     <header className="topbar">
+  <div className="header">
+    
+    <div className="logo">
+      <img src="/prefeitura.png" alt="Prefeitura" className="logo-img" />
+
+      <div className="logo-text">
+        <span className="prefeitura">Prefeitura de Tupã</span>
+
+        <div className="secretaria">
+          <img src="/meio-ambiente.png" alt="Meio Ambiente" />
           <span>Secretaria do Meio Ambiente</span>
         </div>
+      </div>
+    </div>
 
-        <div className="actions">
-          <a href="#">Entrar</a>
-          <button className="btn-outline">Criar uma conta</button>
-        </div>
-      </header>
+    <div className="actions">
+      <a href="#">Entrar</a>
+      <button className="btn-outline">Criar uma conta</button>
+    </div>
+
+  </div>
+</header>
 
       {/* MAIN */}
       <main className="main">
@@ -33,28 +44,34 @@ function App() {
           Já possui conta? <a href="#">Entrar</a>
         </p>
 
-        <div className="cards">
-          <div className="card">
-            <div className="icon">👷</div>
-            <h3>Equipe</h3>
-            <span>Membro da equipe</span>
-            <button>Selecionar</button>
-          </div>
+        {/* WRAPPER TRANSPARENTE */}
+        <div className="cards-wrapper">
+          <p className="perfil-title">SELECIONE SEU PERFIL:</p>
 
-          <div className="card">
-            <div className="icon">👤</div>
-            <h3>Cidadão</h3>
-            <span>Solicitação de serviço</span>
-            <button>Selecionar</button>
-          </div>
+          <div className="cards">
+            <div className="card">
+              <div className="icon">👷</div>
+              <h3>Equipe</h3>
+              <span>Membro da equipe</span>
+              <button>Selecionar</button>
+            </div>
 
-          <div className="card">
-            <div className="icon">💼</div>
-            <h3>Gestão</h3>
-            <span>Coordenação</span>
-            <button>Selecionar</button>
+            <div className="card">
+              <div className="icon">👤</div>
+              <h3>Cidadão</h3>
+              <span>Solicitação de serviço</span>
+              <button>Selecionar</button>
+            </div>
+
+            <div className="card">
+              <div className="icon">💼</div>
+              <h3>Gestão</h3>
+              <span>Coordenação</span>
+              <button>Selecionar</button>
+            </div>
           </div>
         </div>
+
       </main>
 
     </div>
