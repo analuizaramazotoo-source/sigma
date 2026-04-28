@@ -1,53 +1,127 @@
-export default function CadastroCidadao() {
+import "./cadastrocidadao.css";
+
+function CadastroCidadao({ voltar }) {
+
   return (
 
-    <div className="cadastro-container">
+    <div className="cadastro-page">
 
-      <div className="card-cadastro">
+      {/* TOPO */}
 
-        <h2>Cadastro do Cidadão</h2>
+      <div className="topo">
 
-        <form>
+        <div className="topo-esquerda">
 
-          <input
-            type="text"
-            placeholder="Nome Completo"
+          <img
+            src="/meio-ambiente.png"
+            alt="logo"
           />
 
-          <input
-            type="email"
-            placeholder="E-mail"
+          <span>
+            SECRETARIA DO MEIO AMBIENTE
+          </span>
+
+        </div>
+
+        <button
+          className="btn-voltar"
+          onClick={voltar}
+        >
+          Voltar
+        </button>
+
+      </div>
+
+      {/* CONTEÚDO */}
+
+      <div className="conteudo">
+
+        {/* LATERAL ESQUERDA */}
+
+        <div className="lateral">
+
+          <img
+            src="/prefeitura.png"
+            className="logo-prefeitura"
           />
 
-          <input
-            type="text"
-            placeholder="Celular"
-          />
+          <div className="logo-inferior">
 
-          <input
-            type="text"
-            placeholder="CPF"
-          />
+            <img src="/meio-ambiente.png" />
 
-          <div className="senha-group">
-
-            <input
-              type="password"
-              placeholder="Senha"
-            />
-
-            <input
-              type="password"
-              placeholder="Confirmar Senha"
-            />
+            <span>
+              SECRETARIA DO
+              <br />
+              MEIO AMBIENTE
+            </span>
 
           </div>
 
-          <button type="submit">
-            CADASTRAR
-          </button>
+        </div>
 
-        </form>
+        {/* FUNDO CENTRAL */}
+
+        <div className="centro">
+
+          <div className="card">
+
+            <h2>Cadastro do Cidadão</h2>
+
+            <p className="sub">
+              Crie sua conta para relatar problemas ou solicitar serviços
+              de meio ambiente na sua cidade.
+            </p>
+
+            <div className="form-area">
+
+              {/* INPUTS */}
+
+              <div className="inputs">
+
+                <input placeholder="Nome Completo" />
+
+                <input placeholder="E-mail" />
+
+                <input placeholder="Celular" />
+
+                <input placeholder="CPF" />
+
+                <div className="senha">
+
+                  <input
+                    placeholder="Senha"
+                    type="password"
+                  />
+
+                  <input
+                    placeholder="Confirmar Senha"
+                    type="password"
+                  />
+
+                </div>
+
+                <button className="btn-cadastrar">
+                  CADASTRAR
+                </button>
+
+              </div>
+
+              {/* IMAGEM */}
+
+              <div className="imagem">
+
+                <img
+                  src="/seguranca.png"
+                  alt="segurança"
+                />
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -55,3 +129,5 @@ export default function CadastroCidadao() {
 
   );
 }
+
+export default CadastroCidadao;
