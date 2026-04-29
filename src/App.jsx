@@ -1,29 +1,14 @@
 import "./App.css";
-import { useState } from "react";
+
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 import CadastroCidadao from "./pages/cadastrocidadao";
 
-function App() {
-
-  // CONTROLE DE TELA
-  const [mostrarCadastro, setMostrarCadastro] = useState(false);
-
-  function abrirCadastroCidadao() {
-    setMostrarCadastro(true);
-  }
-
-  function voltarHome() {
-    setMostrarCadastro(false);
-  }
-
-  // MOSTRAR CADASTRO
-  if (mostrarCadastro) {
-    return <CadastroCidadao voltar={voltarHome} />;
-  }
-
+function Home() {
   return (
     <div className="container">
 
-      {/* HEADER */}
+      {/* BARRA SUPERIOR */}
       <header className="topbar">
         <div className="header">
 
@@ -31,7 +16,7 @@ function App() {
             <img src="/prefeitura.png" alt="Prefeitura" className="logo-img" />
 
             <div className="logo-text">
-              <span className="prefeitura">Prefeitura de Tupã</span>
+              <span>Prefeitura de Tupã</span>
 
               <div className="secretaria">
                 <img src="/meio-ambiente.png" alt="Meio Ambiente" />
@@ -50,7 +35,6 @@ function App() {
 
       {/* MAIN */}
       <main className="main">
-
         <h1>Crie sua conta na</h1>
         <h2>SECRETARIA DO MEIO AMBIENTE</h2>
 
@@ -66,9 +50,8 @@ function App() {
           Já possui conta? <a href="#">Entrar</a>
         </p>
 
-        {/* CARDS */}
+        {/* WRAPPER */}
         <div className="cards-wrapper">
-
           <p className="perfil-title">
             SELECIONE SEU PERFIL:
           </p>
@@ -89,10 +72,10 @@ function App() {
               <h3>Cidadão</h3>
               <span>Solicitação de serviço</span>
 
-              {/* BOTÃO FUNCIONANDO */}
-              <button onClick={abrirCadastroCidadao}>
-                Selecionar
-              </button>
+              {/* 👇 SÓ ISSO FOI ADICIONADO */}
+              <Link to="/cadastro-cidadao">
+                <button>Selecionar</button>
+              </Link>
 
             </div>
 
@@ -105,12 +88,35 @@ function App() {
             </div>
 
           </div>
-
         </div>
 
       </main>
 
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+
+      <Routes>
+
+        {/* HOME */}
+        <Route
+          path="/"
+          element={<Home />}
+        />
+
+        {/* CADASTRO */}
+        <Route
+          path="/cadastro-cidadao"
+          element={<CadastroCidadao />}
+        />
+
+      </Routes>
+
+    </Router>
   );
 }
 

@@ -1,13 +1,19 @@
 import "./cadastrocidadao.css";
+import { useNavigate } from "react-router-dom";
 
-function CadastroCidadao({ voltar }) {
+function CadastroCidadao() {
+
+  const navigate = useNavigate();
+
+  function voltarPagina() {
+    navigate("/");
+  }
 
   return (
 
     <div className="cadastro-page">
 
       {/* TOPO */}
-
       <div className="topo">
 
         <div className="topo-esquerda">
@@ -23,9 +29,10 @@ function CadastroCidadao({ voltar }) {
 
         </div>
 
+        {/* BOTÃO VOLTAR */}
         <button
           className="btn-voltar"
-          onClick={voltar}
+          onClick={voltarPagina}
         >
           Voltar
         </button>
@@ -33,11 +40,9 @@ function CadastroCidadao({ voltar }) {
       </div>
 
       {/* CONTEÚDO */}
-
       <div className="conteudo">
 
-        {/* LATERAL ESQUERDA */}
-
+        {/* LATERAL */}
         <div className="lateral">
 
           <img
@@ -59,13 +64,14 @@ function CadastroCidadao({ voltar }) {
 
         </div>
 
-        {/* FUNDO CENTRAL */}
-
+        {/* CENTRO */}
         <div className="centro">
 
           <div className="card">
 
-            <h2>Cadastro do Cidadão</h2>
+            <h2>
+              Cadastro do Cidadão
+            </h2>
 
             <p className="sub">
               Crie sua conta para relatar problemas ou solicitar serviços
@@ -75,7 +81,6 @@ function CadastroCidadao({ voltar }) {
             <div className="form-area">
 
               {/* INPUTS */}
-
               <div className="inputs">
 
                 <input placeholder="Nome Completo" />
@@ -107,7 +112,6 @@ function CadastroCidadao({ voltar }) {
               </div>
 
               {/* IMAGEM */}
-
               <div className="imagem">
 
                 <img
@@ -128,6 +132,7 @@ function CadastroCidadao({ voltar }) {
     </div>
 
   );
+
 }
 
 export default CadastroCidadao;

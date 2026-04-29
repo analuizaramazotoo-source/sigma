@@ -1,4 +1,4 @@
-* {
+* { 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,7 +12,7 @@ html, body, #root {
 /* CONTAINER FULL */
 .container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh; /* 🔥 alterado */
 
   background: url("/fundo.jpg") no-repeat center center;
   background-size: cover;
@@ -44,10 +44,6 @@ html, body, #root {
   font-weight: 500;
 }
 
-.divider {
-  opacity: 0.5;
-}
-
 .actions {
   display: flex;
   gap: 15px;
@@ -73,13 +69,11 @@ html, body, #root {
   transition: 0.2s;
 }
 
-/* HOVER */
 .btn-outline:hover {
   background: #b7e4b8;
   color: #1e4d2b;
 }
 
-/* CLICK */
 .btn-outline:active {
   transform: scale(0.95);
   background: #8fd89a;
@@ -92,7 +86,8 @@ html, body, #root {
   text-align: center;
   color: white;
 
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px); /* 🔥 alterado */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,7 +109,7 @@ html, body, #root {
   margin-bottom: 20px;
 }
 
-/* BOTÃO PRINCIPAL MENOR */
+/* BOTÃO PRINCIPAL */
 .btn-primary {
   background: linear-gradient(135deg, #c8facc, #a4e8a6);
   color: #1e4d2b;
@@ -127,25 +122,15 @@ html, body, #root {
   cursor: pointer;
   font-weight: 600;
 
-  display: inline-block;   /* 👈 IMPORTANTE */
-  width: auto;             /* 👈 REMOVE largura gigante */
+  display: inline-block;
+  width: auto;
 
-  margin: 0 auto;          /* centraliza */
+  margin: 0 auto;
   
   transition: 0.2s;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
-  filter: brightness(1.05);
-}
 
-.btn-primary:active {
-  transform: scale(0.97);
-  filter: brightness(0.95);
-}
-/* LOGIN */
 .login {
   margin-top: 10px;
   font-size: 13px;
@@ -155,7 +140,7 @@ html, body, #root {
   color: #c8facc;
 }
 
-/* WRAPPER TRANSPARENTE */
+/* WRAPPER */
 .cards-wrapper {
   margin-top: 40px;
   padding: 25px 30px;
@@ -164,7 +149,9 @@ html, body, #root {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(6px);
 
-  width: fit-content;
+  max-width: 900px; /* 🔥 novo */
+  width: 100%;
+
   margin-left: auto;
   margin-right: auto;
 
@@ -183,12 +170,17 @@ html, body, #root {
   display: flex;
   gap: 18px;
   justify-content: center;
+
+  flex-wrap: wrap; /* 🔥 novo */
 }
 
-/* CARD MAIS RETANGULAR */
+/* CARD */
 .card {
   background: rgba(255, 255, 255, 0.95);
+
   width: 230px;
+  flex: 0 0 230px; /* 🔥 novo */
+
   padding: 18px;
   border-radius: 10px;
 
@@ -200,7 +192,6 @@ html, body, #root {
 
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
 
 .card .icon {
@@ -235,99 +226,16 @@ html, body, #root {
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.card button:hover {
-  transform: scale(1.03);
-}
-
-/* BARRA VERDE FULL */
+/* BARRA VERDE */
 .topbar {
   width: 100%;
   background: linear-gradient(90deg, #2f6f3e, #3d8b4e);
   padding: 10px 0;
 }
 
-/* CONTEÚDO CENTRAL */
-.header {
-  max-width: 1200px;
-  margin: 0 auto;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 10px 20px;
-  color: #e6ffe6;
-}
-
-
-@media (max-width: 1024px) {
-
-  .header {
-    padding: 10px 20px;
-  }
-
-  .logo-img {
-    height: 32px;
-  }
-
-  .main h2 {
-    font-size: 24px;
-  }
-
-  .cards {
-    gap: 12px;
-  }
-
-  .card {
-    width: 200px;
-  }
-}
-
-
+/* RESPONSIVO */
 @media (max-width: 768px) {
 
-  /* HEADER quebra linha */
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .actions {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  /* TEXTO */
-  .main {
-    padding: 0 15px;
-  }
-
-  .main h1 {
-    font-size: 14px;
-  }
-
-  .main h2 {
-    font-size: 20px;
-  }
-
-  .sub {
-    font-size: 12px;
-  }
-
-  /* BOTÃO */
-  .btn-primary {
-    font-size: 12px;
-    padding: 7px 16px;
-  }
-
-  /* WRAPPER */
-  .cards-wrapper {
-    width: 100%;
-    padding: 20px;
-  }
-
-  /* CARDS EM COLUNA */
   .cards {
     flex-direction: column;
     align-items: center;
@@ -336,35 +244,7 @@ html, body, #root {
   .card {
     width: 100%;
     max-width: 280px;
-  }
-}
-
-
-
-@media (max-width: 480px) {
-
-  .logo-text {
-    font-size: 12px;
+    flex: none;
   }
 
-  .secretaria span {
-    font-size: 11px;
-  }
-
-  .main h2 {
-    font-size: 18px;
-  }
-
-  .btn-outline {
-    font-size: 12px;
-    padding: 5px 12px;
-  }
-
-  .card {
-    padding: 15px;
-  }
-
-  .perfil-title {
-    font-size: 11px;
-  }
 }
