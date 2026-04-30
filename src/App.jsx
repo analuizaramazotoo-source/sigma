@@ -1,40 +1,47 @@
 import "./App.css";
 
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
-import CadastroCidadao from "./pages/cadastrocidadao";
+import CadastroCidadao from "./pages/CadastroCidadao";
+import Login from "./pages/Login";
+
+/* ================= HOME ================= */
 
 function Home() {
   return (
     <div className="container">
 
-      {/* BARRA SUPERIOR */}
       <header className="topbar">
         <div className="header">
 
           <div className="logo">
-            <img src="/prefeitura.png" alt="Prefeitura" className="logo-img" />
+            <img src="/prefeitura.png" className="logo-img" />
 
             <div className="logo-text">
               <span>Prefeitura de Tupã</span>
 
               <div className="secretaria">
-                <img src="/meio-ambiente.png" alt="Meio Ambiente" />
+                <img src="/meio-ambiente.png" />
                 <span>Secretaria do Meio Ambiente</span>
               </div>
             </div>
           </div>
 
           <div className="actions">
-            <a href="#">Entrar</a>
+            <Link to="/login">Entrar</Link>
             <button className="btn-outline">Criar uma conta</button>
           </div>
 
         </div>
       </header>
 
-      {/* MAIN */}
       <main className="main">
+
         <h1>Crie sua conta na</h1>
         <h2>SECRETARIA DO MEIO AMBIENTE</h2>
 
@@ -47,18 +54,17 @@ function Home() {
         </button>
 
         <p className="login">
-          Já possui conta? <a href="#">Entrar</a>
+          Já possui conta? <Link to="/login">Entrar</Link>
         </p>
 
-        {/* WRAPPER */}
         <div className="cards-wrapper">
+
           <p className="perfil-title">
             SELECIONE SEU PERFIL:
           </p>
 
           <div className="cards">
 
-            {/* EQUIPE */}
             <div className="card">
               <div className="icon">👷</div>
               <h3>Equipe</h3>
@@ -66,20 +72,17 @@ function Home() {
               <button>Selecionar</button>
             </div>
 
-            {/* CIDADÃO */}
             <div className="card">
               <div className="icon">👤</div>
               <h3>Cidadão</h3>
               <span>Solicitação de serviço</span>
 
-              {/* 👇 SÓ ISSO FOI ADICIONADO */}
               <Link to="/cadastro-cidadao">
                 <button>Selecionar</button>
               </Link>
 
             </div>
 
-            {/* GESTÃO */}
             <div className="card">
               <div className="icon">💼</div>
               <h3>Gestão</h3>
@@ -88,6 +91,7 @@ function Home() {
             </div>
 
           </div>
+
         </div>
 
       </main>
@@ -96,23 +100,17 @@ function Home() {
   );
 }
 
+/* ================= APP ================= */
+
 function App() {
   return (
     <Router>
 
       <Routes>
 
-        {/* HOME */}
-        <Route
-          path="/"
-          element={<Home />}
-        />
-
-        {/* CADASTRO */}
-        <Route
-          path="/cadastro-cidadao"
-          element={<CadastroCidadao />}
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/cadastro-cidadao" element={<CadastroCidadao />} />
 
       </Routes>
 
