@@ -48,7 +48,7 @@ function Login() {
       {/* MAIN */}
       <main className="main">
 
-        <h1>Crie sua conta na</h1>
+        <h1>CRIE SUA CONTA NA</h1>
         <h2>SECRETARIA DO MEIO AMBIENTE</h2>
 
         <p className="sub">
