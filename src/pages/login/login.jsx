@@ -1,5 +1,5 @@
-import "../../App.css";
-import { useNavigate } from "react-router-dom";
+import "../../App.css";  
+import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
 
@@ -31,15 +31,12 @@ function Login() {
           </div>
 
           <div className="actions">
-
-            {/* BOTÃO VOLTAR (única adição) */}
             <button
               className="btn-outline"
               onClick={voltarPagina}
             >
               Voltar
             </button>
-
           </div>
 
         </div>
@@ -48,22 +45,9 @@ function Login() {
       {/* MAIN */}
       <main className="main">
 
-        <h1>CRIE SUA CONTA NA</h1>
+        <h1>ENTRE NA</h1>
         <h2>SECRETARIA DO MEIO AMBIENTE</h2>
 
-        <p className="sub">
-          Registre-se e conecte-se ao portal para solicitar serviços ambientais
-        </p>
-
-        <button className="btn-primary">
-          Criar minha conta
-        </button>
-
-        <p className="login">
-          Já possui conta? <a href="#">Entrar</a>
-        </p>
-
-        {/* WRAPPER */}
         <div className="cards-wrapper">
 
           <p className="perfil-title">
@@ -76,21 +60,25 @@ function Login() {
               <div className="icon">👷</div>
               <h3>Equipe</h3>
               <span>Membro da equipe</span>
-              <button>Selecionar</button>
+              <button>Entrar</button>
             </div>
 
             <div className="card">
               <div className="icon">👤</div>
               <h3>Cidadão</h3>
               <span>Solicitação de serviço</span>
-              <button>Selecionar</button>
+
+              <Link to="/login/cidadao">
+                <button>Entrar</button>
+              </Link>
+
             </div>
 
             <div className="card">
               <div className="icon">💼</div>
               <h3>Gestão</h3>
               <span>Coordenação</span>
-              <button>Selecionar</button>
+              <button>Entrar</button>
             </div>
 
           </div>
