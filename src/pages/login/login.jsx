@@ -1,45 +1,51 @@
-import "./App.css";
+import "../App.css";
+import { useNavigate } from "react-router-dom";
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
+function Login() {
 
-import CadastroCidadao from "./pages/CadastroCidadao";
-import Login from "./pages/login/login";
+  const navigate = useNavigate();
 
-/* ================= HOME ================= */
+  function voltarPagina() {
+    navigate("/");
+  }
 
-function Home() {
   return (
+
     <div className="container">
 
+      {/* BARRA SUPERIOR */}
       <header className="topbar">
         <div className="header">
 
           <div className="logo">
-            <img src="/prefeitura.png" className="logo-img" />
+            <img src="/prefeitura.png" alt="Prefeitura" className="logo-img" />
 
             <div className="logo-text">
               <span>Prefeitura de Tupã</span>
 
               <div className="secretaria">
-                <img src="/meio-ambiente.png" />
+                <img src="/meio-ambiente.png" alt="Meio Ambiente" />
                 <span>Secretaria do Meio Ambiente</span>
               </div>
             </div>
           </div>
 
           <div className="actions">
-            <Link to="/login">Entrar</Link>
-            <button className="btn-outline">Criar uma conta</button>
+
+            {/* BOTÃO VOLTAR (única adição) */}
+            <button
+              className="btn-outline"
+              onClick={voltarPagina}
+            >
+              Voltar
+            </button>
+
           </div>
 
         </div>
       </header>
 
+      {/* MAIN */}
       <main className="main">
 
         <h1>Crie sua conta na</h1>
@@ -54,9 +60,10 @@ function Home() {
         </button>
 
         <p className="login">
-          Já possui conta? <Link to="/login">Entrar</Link>
+          Já possui conta? <a href="#">Entrar</a>
         </p>
 
+        {/* WRAPPER */}
         <div className="cards-wrapper">
 
           <p className="perfil-title">
@@ -76,11 +83,7 @@ function Home() {
               <div className="icon">👤</div>
               <h3>Cidadão</h3>
               <span>Solicitação de serviço</span>
-
-              <Link to="/cadastro-cidadao">
-                <button>Selecionar</button>
-              </Link>
-
+              <button>Selecionar</button>
             </div>
 
             <div className="card">
@@ -97,25 +100,9 @@ function Home() {
       </main>
 
     </div>
+
   );
+
 }
 
-/* ================= APP ================= */
-
-function App() {
-  return (
-    <Router>
-
-      <Routes>
-
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cadastro-cidadao" element={<CadastroCidadao />} />
-
-      </Routes>
-
-    </Router>
-  );
-}
-
-export default App;
+export default Login;
