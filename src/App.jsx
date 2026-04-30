@@ -19,18 +19,12 @@ function Home() {
       <header className="topbar">
         <div className="header">
 
+<div className="header-logos">
           <div className="logo">
-            <img src="/prefeitura.png" className="logo-img" />
-
-            <div className="logo-text">
-              <span>Prefeitura de Tupã</span>
-
-              <div className="secretaria">
-                <img src="/meio-ambiente.png" />
-                <span>Secretaria do Meio Ambiente</span>
-              </div>
-            </div>
+            <img src="logotupa.png" className="logo-img" />
+                <img src="/secre.png" className="logos" />
           </div>
+</div>
 
           <div className="actions">
             <Link to="/login">Entrar</Link>

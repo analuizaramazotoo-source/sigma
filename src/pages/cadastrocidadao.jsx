@@ -19,7 +19,7 @@ function CadastroCidadao() {
         <div className="topo-esquerda">
 
           <img
-            src="/meio-ambiente.png"
+            src="/secre.png"
             alt="logo"
           />
 

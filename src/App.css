@@ -40,8 +40,23 @@ html, body, #root {
 
 .logo {
   display: flex;
-  gap: 10px;
+  gap: 4px;
   font-weight: 500;
+}
+
+.logo-img {
+  width: 200px;  
+  height: 65px;
+}
+.logos{
+  width: 200px;  
+  height: 65px;
+}
+
+.header-logos {
+  display: flex;
+  align-items: center; /* ALINHA NA MESMA ALTURA */
+  gap: 5px; /* espaço entre elas */
 }
 
 .actions {
