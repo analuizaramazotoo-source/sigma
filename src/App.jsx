@@ -28,7 +28,7 @@ function Home() {
 
           <div className="actions">
             <Link to="/login">Entrar</Link>
-            <button className="btn-outline">Criar uma conta</button>
+            <button className="btn-outline">Criar uma conta ana</button>
           </div>
 
         </div>
@@ -60,14 +60,14 @@ function Home() {
           <div className="cards">
 
             <div className="card">
-              <div className="icon">👷</div>
+              <img src="/equipe.png" className="card-img" alt="Equipe" />
               <h3>Equipe</h3>
               <span>Membro da equipe</span>
               <button>Selecionar</button>
             </div>
 
             <div className="card">
-              <div className="icon">👤</div>
+              <img src="/cidadao.png" className="card-img" alt="Cidadão" />
               <h3>Cidadão</h3>
               <span>Solicitação de serviço</span>
 
@@ -78,7 +78,7 @@ function Home() {
             </div>
 
             <div className="card">
-              <div className="icon">💼</div>
+              <img src="/gestao.png" className="card-img" alt="Gestão" />
               <h3>Gestão</h3>
               <span>Coordenação</span>
               <button>Selecionar</button>
