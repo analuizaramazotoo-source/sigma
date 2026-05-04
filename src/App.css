@@ -47,10 +47,14 @@ html, body, #root {
 .logo-img {
   width: 200px;  
   height: 65px;
+ 
+  
 }
 .logos{
-  width: 200px;  
-  height: 65px;
+  width: 220px;  
+  height: 75px;
+  position: relative;
+  right: 45px;
 }
 
 .header-logos {
@@ -245,7 +249,7 @@ html, body, #root {
 .topbar {
   width: 100%;
   background: linear-gradient(90deg, #2f6f3e, #3d8b4e);
-  padding: 10px 0;
+  padding: 3px 0;
 }
 
 /* RESPONSIVO */
