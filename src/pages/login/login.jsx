@@ -18,14 +18,12 @@ function Login() {
         <div className="header">
 
           <div className="logo">
-            <img src="/prefeitura.png" alt="Prefeitura" className="logo-img" />
+            <img src="/logotupa.png" alt="Prefeitura" className="logo-img" />
 
             <div className="logo-text">
-              <span>Prefeitura de Tupã</span>
 
               <div className="secretaria">
-                <img src="/meio-ambiente.png" alt="Meio Ambiente" />
-                <span>Secretaria do Meio Ambiente</span>
+                <img src="/secre.png" alt="Meio Ambiente" />
               </div>
             </div>
           </div>
@@ -54,33 +52,32 @@ function Login() {
             SELECIONE SEU PERFIL:
           </p>
 
-          <div className="cards">
+         <div className="cards">
 
             <div className="card">
-              <div className="icon">👷</div>
+              <img src="/equipe.png" className="card-img" alt="Equipe" />
               <h3>Equipe</h3>
-              <span>Membro da equipe</span>
-              <button>Entrar</button>
+              <span>Membros das equipes</span>
+              <button>Selecionar</button>
             </div>
 
             <div className="card">
-              <div className="icon">👤</div>
+              <img src="/cidadao.png" className="card-img" alt="Cidadão" />
               <h3>Cidadão</h3>
-              <span>Solicitação de serviço</span>
+              <span>Solicitação de serviços</span>
 
-              <Link to="/login/cidadao">
-                <button>Entrar</button>
+              <Link to="/cadastro-cidadao">
+                <button>Selecionar</button>
               </Link>
 
             </div>
 
             <div className="card">
-              <div className="icon">💼</div>
+              <img src="/gestao.png" className="card-img" alt="Gestão" />
               <h3>Gestão</h3>
               <span>Coordenação</span>
-              <button>Entrar</button>
+              <button>Selecionar</button>
             </div>
-
           </div>
 
         </div>
