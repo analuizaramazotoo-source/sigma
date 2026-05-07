@@ -68,7 +68,7 @@ function Login() {
               <h3>Cidadão</h3>
               <span>Solicitação de serviço</span>
 
-              <Link to="/login/cidadao">
+              <Link to="/logincidadao">
                 <button>Entrar</button>
               </Link>
 
